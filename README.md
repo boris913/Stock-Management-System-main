@@ -10,8 +10,8 @@ Ils peuvent ensuite recevoir les articles listés sur chaque bon de commande, ce
 La direction peut ensuite produire un enregistrement de retour lorsque les biens livrés présentent des défauts, des problèmes ou tout autre souci. Après avoir sauvegardé ce fichier, le système déduira immédiatement les biens endommagés de la disponibilité du stock. Enfin, l'enregistrement des ventes de l'entreprise est un enregistrement des stocks que ses clients ou consommateurs ont achetés. La disponibilité du stock sera également réduite pour chaque stock spécifié dans l'enregistrement des ventes.
 
 #
-![Screenshot (5)](C:/wamp64/www/Stock-Management-System-main/img/login_stockms.PNG)
+# Système de Gestion des Stocks
+
+![Écran de connexion](img/login_stockms.PNG)
+![Interface de gestion des stocks](img/stocksms_src.png)
 #
-![Screenshot (6)](img/stocksms src.png)
-#
-![Screenshot (7)](https://user-images.githubusercontent.com/36708000/189607103-2ace09bb-3b20-4ec2-a4e1-31b506d8b740.png)
