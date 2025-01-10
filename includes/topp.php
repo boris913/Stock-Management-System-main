@@ -4,7 +4,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <style type="text/css">
@@ -37,17 +37,17 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Stock Control Management System </title>
+  <title>Système de Gestion des Stocks</title>
   <link rel="icon" href="https://www.freeiconspng.com/uploads/sales-icon-7.png">
 
-  <!-- Custom fonts for this template-->
+  <!-- Polices personnalisées pour ce modèle-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template-->
+  <!-- Styles personnalisés pour ce modèle-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this page -->
+  <!-- Styles personnalisés pour cette page -->
   <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="cart.css" />
@@ -55,26 +55,26 @@
 
 <body id="page-top">
           
-  <!-- Page Wrapper -->
+  <!-- Wrapper de la page -->
   <div id="wrapper">
 
-    <!-- Content Wrapper -->
+    <!-- Wrapper de contenu -->
     <div id="content-wrapper" class="d-flex flex-column">
 
-      <!-- Main Content -->
+      <!-- Contenu principal -->
       <div id="content">
 
-        <!-- Topbar -->
+        <!-- Barre supérieure -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
       <a class="sidebar-brand d-flex align-items-center justify-content-center"  style="text-decoration: none; font-size: 18px; font-weight: bold;" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Stock Control Management System</div>
+        <div class="sidebar-brand-text mx-3">Système de Gestion des Stocks</div>
       </a>
 
-          <!-- Topbar Navbar -->
+          <!-- Navbar de la barre supérieure -->
           <ul class="navbar-nav ml-auto">
 
             <li class="nav-item dropdown no-arrow">
@@ -85,10 +85,10 @@
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
-            <!-- Nav Item - User Information -->
+            <!-- Éléments de navigation - Informations utilisateur -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo  $_SESSION['FIRST_NAME']. ' '.$_SESSION['LAST_NAME'] ;?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['FIRST_NAME']. ' '.$_SESSION['LAST_NAME'] ;?></span>
                 <img class="img-profile rounded-circle"
                 <?php
                   if($_SESSION['GENDER']=='Male'){
@@ -101,34 +101,32 @@
               </a>
 
               <?php 
-
-                $query = 'SELECT ID, FIRST_NAME,LAST_NAME,USERNAME,PASSWORD, t.TYPE
+                $query = 'SELECT ID, FIRST_NAME, LAST_NAME, USERNAME, PASSWORD, t.TYPE
                           FROM users u
                           JOIN employee e ON e.EMPLOYEE_ID=u.EMPLOYEE_ID
                           JOIN type t ON t.TYPE_ID=u.TYPE_ID';
                 $result = mysqli_query($db, $query) or die (mysqli_error($db));
       
                 while ($row = mysqli_fetch_assoc($result)) {
-                          $a = $_SESSION['MEMBER_ID'];
-                          $bbb = $_SESSION['TYPE'];
+                  $a = $_SESSION['MEMBER_ID'];
+                  $bbb = $_SESSION['TYPE'];
                 }
-                          
-            ?>
+              ?>
 
-              <!-- Dropdown - User Information -->
+              <!-- Dropdown - Informations utilisateur -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <button class="dropdown-item" onclick="on()">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  Profil
                 </button>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#settingsModal" data-href="settings.php?action=edit & id='<?php echo $a; ?>'">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
+                  Paramètres
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Déconnexion
                 </a>
               </div>
             </li>
@@ -136,7 +134,7 @@
           </ul>
 
         </nav>
-        <!-- End of Topbar -->
+        <!-- Fin de la barre supérieure -->
           
-        <!-- Begin Page Content -->
+        <!-- Début du contenu de la page -->
         <div class="container-fluid">

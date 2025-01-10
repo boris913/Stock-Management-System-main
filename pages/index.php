@@ -56,7 +56,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-0">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Fournisseur</div>
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Fournisseurs</div>
                             <div class="h6 mb-0 font-weight-bold text-gray-800">
                                 <?php 
                                 $query = "SELECT COUNT(*) FROM supplier";
@@ -108,7 +108,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-0">
-                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Compte enregistré</div>
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Compte enregistrés</div>
                             <div class="h6 mb-0 font-weight-bold text-gray-800">
                                 <?php 
                                 $query = "SELECT COUNT(*) FROM users WHERE TYPE_ID=2";
@@ -136,7 +136,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-0">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Produit</div>
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Produits</div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
                                     <div class="h6 mb-0 mr-3 font-weight-bold text-gray-800">
@@ -159,7 +159,33 @@ while ($row = mysqli_fetch_assoc($result)) {
             </div>
         </div>
 
+        <!-- Nombre de Produits Vendus -->
+        <div class="col-md-12 mb-3">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-0">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Produits</div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                <?php 
+                                $query = "SELECT SUM(NUMOFITEMS) FROM transaction";
+                                $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                while ($row = mysqli_fetch_array($result)) {
+                                    echo "$row[0]";
+                                }
+                                ?> Produit(s)Vendus
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+    
 
     <!-- PRODUITS RÉCENTS -->
     <div class="col-lg-3">
